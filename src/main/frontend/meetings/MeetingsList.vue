@@ -28,6 +28,7 @@
         <button v-if="meeting.participants.length === 0" class="button" @click="$emit('delete', meeting)">
           Usuń puste spotkanie
         </button>
+
       </td>
     </tr>
     </tbody>
@@ -37,5 +38,16 @@
 <script>
     export default {
         props: ['meetings', 'username']
-    }
+    },
+  methods: {
+    register(user) {
+
+      this.$http.post('meetings', meeting)
+              .then(() => {
+                this.success('Spotkanie zostało usuniete.');
+
+              })
+              .catch(response => this.failure('Błąd przy usuwaniu spotkania: ' + response.status));
+    },
+  }
 </script>
