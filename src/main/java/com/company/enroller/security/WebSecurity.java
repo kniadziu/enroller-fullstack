@@ -19,6 +19,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
     @Value("${security.secret}")
     private String secret;
 
