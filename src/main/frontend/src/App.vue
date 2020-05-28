@@ -51,6 +51,7 @@
                     .then(response => {
                         const token = response.body.token;
                         this.storeAuth(user.login, token);
+                      this.$http.get('meetings').then(response => console.log(response.body)); //pobierz spotkania do konsoli
                     })
                     .catch(() => this.failure('Logowanie nieudane.'));
             },

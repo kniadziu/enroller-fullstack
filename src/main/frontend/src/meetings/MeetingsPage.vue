@@ -30,9 +30,16 @@
             };
         },
         methods: {
-            addNewMeeting(meeting) {
+            addNewMeeting: function (meeting) {
                 this.meetings.push(meeting);
+                this.$http.post('meetings', meeting)
+                    .then(() => {
+                      //  this.success('Konto zostało założone. Możesz się zalogować.');
+                        //  this.registering = false;
+                    })
+                   // .catch(response => this.failure('Błąd przy zakładaniu konta. Kod odpowiedzi: ' + response.status));
             },
+
             addMeetingParticipant(meeting) {
                 meeting.participants.push(this.username);
             },
@@ -41,6 +48,15 @@
             },
             deleteMeeting(meeting) {
                 this.meetings.splice(this.meetings.indexOf(meeting), 1);
+            }
+        },
+        mounted() {
+            const meeting = localStorage.getItem('meeting');
+
+            if (meting) {
+                this.storeAuth(meeting);
+
+               // this.$http.get(`participants/${username}`).catch(() => this.logout());
             }
         }
     }

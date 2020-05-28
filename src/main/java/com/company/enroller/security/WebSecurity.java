@@ -29,6 +29,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Value("${security.token_expiration_in_seconds}")
     private int tokenExpiration;
 
+//    Skonfiguruj firewall tak, by nie pozwalał na korzystanie z aplikacji
+//    bez zalogowania się (poza endpointem wystawiającym token oraz rejestrującym użytkownika)
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()

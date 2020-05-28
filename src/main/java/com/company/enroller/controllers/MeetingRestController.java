@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("api/meetings")
+@RequestMapping("/api/meetings")
 public class MeetingRestController {
 
     @Autowired
