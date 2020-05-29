@@ -1,5 +1,7 @@
 # Meeting-Enroller-Fullstack 
 
+(Java, Hibernate, Vue.js)
+
 Meeting app
 
 application for creating and cancel meetings. It allows you to register as a new user and after logging in, to sign up for individual classes / meetings.
