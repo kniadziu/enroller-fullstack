@@ -1,4 +1,8 @@
-# Enroller-Fullstack 
+# Meeting-Enroller-Fullstack 
+
+Meeting app
+
+application for creating and removining meetings. It allows you to register as a new user and after logging in, to sign up for individual classes / meetings.
 
 Project covers backend and frontend 
 
@@ -58,6 +62,7 @@ if you us VS Code, install plugins:
 * [vue](https://vuejs.org/) - progressive framework for building user interfaces
 * [vue-resource](https://github.com/pagekit/vue-resource) - The plugin for Vue.js provides services for making web requests 
   and handle responses using a XMLHttpRequest or JSONP.
+* [Hibernate](https://hibernate.org/) - Object/Relational Mapping (ORM) framework, Hibernate is concerned with data persistence as it  applies to relational databases (via JDBC)
 
 
 
