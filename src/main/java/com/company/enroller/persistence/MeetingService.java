@@ -61,6 +61,3 @@ public class MeetingService {
         transaction.commit();
     }
 }
-//////
-
-ś
