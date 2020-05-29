@@ -2,25 +2,29 @@
   <table v-if="meetings.length > 0">
     <thead>
     <tr>
+      <th>ID</th>
       <th>Nazwa spotkania</th>
+      <th>Kiedy?</th>
       <th>Opis</th>
       <th>Uczestnicy</th>
       <td></td>
     </tr>
     </thead>
     <tbody>
-    <tr v-for="meeting in meetings" :key="meeting.title">
+    <tr v-for="meeting in meetings" :key="meeting.name">
+      <td>{{ meeting.id }}</td>
       <td>{{ meeting.title }}</td>
+      <td>{{ meeting.date }}</td>
       <td>{{ meeting.description }}</td>
       <td>
         <ul v-if="meeting.participants">
-          <li v-for="participant in meeting.participants" :key="participant">
-            {{ participant }}
+          <li v-for="participant in meeting.participants" :key="participant.login">
+            {{ participant.login }}
           </li>
         </ul>
       </td>
       <td style="text-align: right; min-width: 400px">
-        <button v-if="meeting.participants.indexOf(username) < 0" class="button-outline"
+        <button v-if="!isEnrolled(meeting)" class="button-outline"
                 @click="$emit('attend', meeting)">
           Zapisz się
         </button>
@@ -36,6 +40,11 @@
 
 <script>
     export default {
-        props: ['meetings', 'username']
+        props: ['meetings', 'username'],
+        methods: {
+            isEnrolled(meeting) {
+                return meeting.participants.map(p => p.login).indexOf(this.username) !== -1;
+            }
+        }
     }
 </script>

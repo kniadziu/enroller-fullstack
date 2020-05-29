@@ -1,7 +1,5 @@
 package com.company.enroller.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
@@ -24,7 +22,6 @@ public class Meeting {
     @Column
     private String date;
 
-    @JsonIgnore
     @ManyToMany(mappedBy = "meetings")
     Set<Participant> participants = new HashSet<>();
 
