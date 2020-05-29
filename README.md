@@ -2,7 +2,7 @@
 
 Meeting app
 
-application for creating and removining meetings. It allows you to register as a new user and after logging in, to sign up for individual classes / meetings.
+application for creating and cancel meetings. It allows you to register as a new user and after logging in, to sign up for individual classes / meetings.
 
 Project covers backend and frontend 
 
