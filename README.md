@@ -2,7 +2,7 @@
 
 (Java, Hibernate, Vue.js)
 
-Meeting app
+Meeting app - https://kniadziufullstack.herokuapp.com/
 
 application for creating and cancel meetings. It allows you to register as a new user and after logging in, to sign up for individual classes / meetings.
 
